@@ -28,7 +28,7 @@ urlpatterns = [
     path('login/',include('User.urls')), 
     path('',include('WebPages.urls')),   
     path('',include('Classes.urls')),
-    path('custom_admin/',include('Admin.urls')),
+    path('',include('Admin.urls')),
     path('',include('Packages.urls')) 
     
 

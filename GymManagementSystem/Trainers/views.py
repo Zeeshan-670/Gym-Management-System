@@ -19,9 +19,10 @@ def PostaddTrainer(request):
     if request.method == "POST":
       trainername = request.POST.get('trainername'),
       trainerdescription = request.POST.get('trainerdescription'),
-      trainerimage = request.FILES.get('trainerimage'),
+      if len(request.FILES) != 0:
+        trainerimage= request.FILES['trainerimage']
 
-      print(trainerimage)
+      print(trainerimage,trainername,trainerdescription)
 
       trainervar = Trainer(
            trainer_name = trainername,
@@ -33,7 +34,7 @@ def PostaddTrainer(request):
       
       trainervar.save()
       
-      return redirect('')
+      return redirect('Adminhome')
 
      
 

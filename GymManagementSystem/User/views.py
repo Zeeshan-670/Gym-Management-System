@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from django.contrib.auth.models import User
+from User.models import CustomUser
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 
@@ -22,12 +22,12 @@ def register(request):
         password = request.POST.get('password')   
 
         
-        if User.objects.filter(email = email).exists():
-             messages.error(request,'email id are already exists')
-             return redirect('signup')
+        # if User.objects.filter(email = email).exists():
+        #      messages.error(request,'email id are already exists')
+        #      return redirect('signup')
 
 
-        user = User(
+        user = CustomUser(
            first_name= firstname,
            last_name= lastname,
            email = email,
@@ -35,7 +35,7 @@ def register(request):
         )
         user.set_password(password)
         user.save()
-        return redirect('signin')
+        return redirect('handlelogin')
         #  firstname=request.POST['firstname'],
         #  lastname=request.POST['lastname'],
         #  email=request.POST['email'],       
@@ -63,19 +63,27 @@ def register(request):
 #     return render(request,"signin.html")
          
 def Login(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        print(username,password)
-        user = authenticate(request,username = username, password = password)
-        if user is not None and user.is_active:
+   
+ return render(request,"signin.html")    
+
+
+
+def dologin (request):
+      if request.method == "POST":
+        user= authenticate(request,
+        username=request.POST.get('username'),
+        password=request.POST.get('password'),)
+
+        if user!=None:
             login(request,user)
-            return redirect('home')
+            user_type = user.user_type
+            if user_type == '0':
+                return redirect('home')
+            elif user_type == '1':
+                return redirect('adminhome')
         else:
-            messages.error(request, 'Email and Password are invalid !')
-        return redirect('login')   
-
-    return render(request,"signin.html")    
-
-
-
+            messages.error(request,'Fields Not Matched!')
+            return redirect('handlelogin')
+      else:
+         messages.error(request,'Fields Not Matched!')
+         return redirect('handlelogin')             
