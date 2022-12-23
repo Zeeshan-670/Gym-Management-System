@@ -1,0 +1,41 @@
+{% extends 'admin_layout.html' %}
+
+
+{% block 'main_content' %}
+
+
+<div class="white_card card_height_100 mb_30">
+    <div class="white_card_header">
+    <div class="box_header m-0">
+    <div class="main-title">
+    <h1>Add Trainers</h1>
+    </div>
+    </div>
+    </div>
+    <div class="white_card_body">
+    <div class="card-body">
+    <form method="POST"  enctype="multipart/form-data" action="{% url 'postAddTrainer' %}">
+      {% csrf_token %}
+    <div class="row mb-3">
+    <div class="col-md-6">
+    <label class="form-label" for="inputEmail4">Enter Name</label>
+    <input type="text" class="form-control" id="inputEmail4" name="trainername" placeholder="Enter Trainers Name">
+    </div>
+    <div class=" col-md-6">
+    <label class="form-label" for="inputPassword4">Enter Description</label>
+    <input type="text" class="form-control" id="inputPassword4" name="trainerdescription" placeholder="Enter Description">
+    </div>
+    </div>
+    <div class=" col-md-2">
+    <label class="form-label" for="inputZip">Enter Trainers Pic</label>
+    <input type="file" name="trainerimage" class="form-control" id="inputZip">
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add New Trainer</button>
+    </form>
+    </div>
+    </div>
+    </div>
+
+
+{% endblock  %}

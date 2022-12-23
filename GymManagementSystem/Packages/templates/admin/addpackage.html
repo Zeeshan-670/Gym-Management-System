@@ -1,0 +1,59 @@
+{% extends 'admin_layout.html' %}
+
+{% block 'main_content' %}
+
+
+<div class="white_card card_height_100 mb_30">
+    <div class="white_card_header">
+    <div class="box_header m-0">
+    <div class="main-title">
+    <h1>Add Package</h1>
+    </div>
+    </div>
+    </div>
+    <div class="white_card_body">
+    <div class="card-body">
+    <form method="POST"  enctype="multipart/form-data" action="{% url 'postAddPackage' %}">
+      {% csrf_token %}
+    <div class="row mb-3">
+    <div class="col-md-6">
+    <label class="form-label" for="inputEmail4">Enter Package Price</label>
+    <input type="text" class="form-control" id="inputEmail4" name="packageprice" placeholder="Enter Package Price ">
+    </div>
+    <div class=" col-md-6">
+    <label class="form-label" for="inputPassword4">Enter Package Duration</label>
+    <input type="text" class="form-control" id="inputPassword4" name="packageduration" placeholder="Enter Package Duration">
+    </div>
+    </div>
+    <div class=" col-md-6">
+        <label class="form-label" for="inputPassword4">Enter Package Timing</label>
+        <input type="text" class="form-control" id="inputPassword4" name="packagetiming" placeholder="Enter Package Timing">
+        </div>
+        </div>
+        <div class=" col-md-6">
+            <label class="form-label" for="inputPassword4">Enter Package Days</label>
+            <select class="form-label form-control" name="packagedays">
+                <option value="Monday/Wednesday/Friday MWF">Select Package</option>            
+                <option value="Monday/Wednesday/Friday MWF">Monday/Wednesday/Friday MWF</option>
+                <option value="Tuesday/Thursday/Saturday TTS">Tuesday/Thursday/Saturday TTS</option>
+                <option value="Moday/Tuesday/Wednesday MTW">Moday/Tuesday/Wednesday MTW</option>
+                <option value="Thursday/Friday/Saturday TFS">Thursday/Friday/Saturday TFS</option>
+                <option value="Daily D">Daily D</option>
+
+            </select>
+            </div>
+            </div>
+    <div class=" col-md-2">
+    <label class="form-label" for="inputZip">Enter Package Pic</label>
+    <input type="file" name="packagepic" class="form-control" id="inputZip">
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add New Package</button>
+    </form>
+    </div>
+    </div>
+    </div>
+
+
+
+{% endblock  %}

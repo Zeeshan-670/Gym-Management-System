@@ -1,347 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <!-- Mirrored from templates.hibotheme.com/golan/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Nov 2022 07:30:51 GMT -->
-  <head>
-    <!-- Required Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/css/plugins.css" />
-    <!-- Icon Plugins CSS -->
-    <link rel="stylesheet" href="assets/css/iconplugins.css" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="assets/css/responsive.css" />
 
-    <!-- Title -->
-    <title>Golan - Gym Fitness HTML Template</title>
+{% extends 'layout.html'  %}
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-  </head>
+{% load static %}
 
-  <body>
-    <!-- Pre Loader -->
-    <div id="preloader">
-      <div id="preloader-area">
-        <div class="pre-line pre-line-1"></div>
-        <div class="pre-line pre-line-2"></div>
-        <div class="pre-line pre-line-3"></div>
-        <div class="pre-line pre-line-4"></div>
-        <div class="pre-line pre-line-5"></div>
-      </div>
-      <div class="preloader-section preloader-left"></div>
-      <div class="preloader-section preloader-right"></div>
-    </div>
-    <!-- End Pre Loader -->
 
-    <!-- Start Navbar Area -->
-    <div class="navbar-area">
-      <div class="mobile-responsive-nav">
-        <div class="container">
-          <div class="mobile-responsive-menu">
-            <div class="logo">
-              <a href="index.html">
-                <img
-                  src="assets/images/logos/small-white-logo.png"
-                  alt="logo"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+{% block 'main_content' %}
 
-      <!-- Menu For Desktop Device -->
-      <div class="desktop-nav nav-area">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-md navbar-light">
-            <a class="navbar-brand" href="index.html">
-              <img src="assets/images/logos/logo.png" alt="Logo" />
-            </a>
-
-            <div
-              class="collapse navbar-collapse mean-menu"
-              id="navbarSupportedContent"
-            >
-              <ul class="navbar-nav m-auto">
-                <li class="nav-item">
-                  <a href="#" class="nav-link dropdown-toggle active"> Home </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a href="index.html" class="nav-link active">
-                        Home One
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="index-2.html" class="nav-link"> Home Two </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="index-3.html" class="nav-link"> Home Three </a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link dropdown-toggle"> Pages </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a href="about.html" class="nav-link"> About Us </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="#" class="nav-link dropdown-toggle">
-                        Others
-                        <i class="bx bx-chevron-down"></i>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a href="pricing.html" class="nav-link">
-                            Pricing Plan
-                          </a>
-                        </li>
-
-                        <li class="nav-item">
-                          <a href="bmi-calculator.html" class="nav-link">
-                            BMI Calculator
-                          </a>
-                        </li>
-
-                        <li class="nav-item">
-                          <a href="our-timetable.html" class="nav-link">
-                            Our Timetable
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="team.html" class="nav-link"> Team </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="testimonials.html" class="nav-link">
-                        Testimonials
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="faq.html" class="nav-link"> FAQ </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="#" class="nav-link dropdown-toggle"> User </a>
-                      <ul class="dropdown-menu">
-                        <li class="nav-item">
-                          <a href="login.html" class="nav-link"> Login </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="register.html" class="nav-link">
-                            Register
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="forgot-password.html" class="nav-link">
-                            Forgot Password
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a href="terms-condition.html" class="nav-link">
-                        Terms & Conditions
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="privacy-policy.html" class="nav-link">
-                        Privacy Policy
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="404.html" class="nav-link"> 404 Page </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="coming-soon.html" class="nav-link">
-                        Coming Soon
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link dropdown-toggle"> Portfolio </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a href="portfolio.html" class="nav-link"> Portfolio </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="portfolio-details.html" class="nav-link">
-                        Portfolio Details
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link dropdown-toggle"> Classes </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a href="classes.html" class="nav-link"> Classes </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="class-details.html" class="nav-link">
-                        Class Details
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link dropdown-toggle"> Shop </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a href="shop.html" class="nav-link">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="cart.html" class="nav-link">Cart</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="checkout.html" class="nav-link">Checkout</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="wishlist.html" class="nav-link">Wishlist</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="shop-details.html" class="nav-link"
-                        >Shop Details</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link dropdown-toggle"> Blog </a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a href="blog-1.html" class="nav-link"> Blog Grid </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="blog-2.html" class="nav-link">
-                        Blog Left Sidebar
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="blog-3.html" class="nav-link">
-                        Blog Right Sidebar
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="blog-details.html" class="nav-link">
-                        Blog Details
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="author.html" class="nav-link"> Author </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="categories.html" class="nav-link">
-                        Categories
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="tags.html" class="nav-link"> Tags </a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="nav-item">
-                  <a href="contact.html" class="nav-link"> Contact Us </a>
-                </li>
-              </ul>
-
-              <div class="others-options d-flex align-items-center">
-                <div class="optional-item">
-                  <div class="search-btn">
-                    <a
-                      class="#"
-                      href="#searchmodal"
-                      data-bs-toggle="modal"
-                      data-bs-target="#searchmodal"
-                    >
-                      <i class="flaticon-loupe"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="optional-item">
-                  <a class="optional-item-cart" href="cart.html">
-                    <i class="flaticon-shopping-cart"></i>
-                    <span>2</span>
-                  </a>
-                </div>
-
-                <div class="optional-item">
-                  <div class="side-menu">
-                    <a
-                      class="#"
-                      href="#sidebarmodal"
-                      data-bs-toggle="modal"
-                      data-bs-target="#sidebarmodal"
-                    >
-                      <i class="ri-menu-line"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mobile-nav">
-                <div class="mobile-other d-flex align-items-center">
-                  <div class="optional-item">
-                    <div class="search-btn">
-                      <a
-                        class="#"
-                        href="#searchmodal"
-                        data-bs-toggle="modal"
-                        data-bs-target="#searchmodal"
-                      >
-                        <i class="flaticon-loupe"></i>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="optional-item">
-                    <a class="optional-item-cart color-ffffff" href="cart.html">
-                      <i class="flaticon-shopping-cart"></i>
-                      <span>2</span>
-                    </a>
-                  </div>
-
-                  <div class="optional-item">
-                    <div class="side-menu">
-                      <a
-                        class="#"
-                        href="#sidebarmodal"
-                        data-bs-toggle="modal"
-                        data-bs-target="#sidebarmodal"
-                      >
-                        <i class="ri-menu-line"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
-    <!-- End Navbar Area -->
 
     <!-- Modal Start -->
     <div
@@ -383,7 +48,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <div class="sidebar-logo">
-              <img src="assets/images/logos/logo-2.png" alt="Image" />
+              <img src="{% static 'assets/images/logos/logo-2.png' %}" alt="Image" />
             </div>
 
             <button type="button" class="close" data-bs-dismiss="modal">
@@ -550,7 +215,7 @@
                 data-aos-duration="1000"
                 data-aos-once="true"
               >
-                <img src="assets/images/home-one/vector3.png" alt="Vector" />
+                <img src="{% static 'assets/images/home-one/vector3.png' %}" alt="Vector" />
               </div>
             </div>
           </div>
@@ -564,10 +229,10 @@
                 data-aos-duration="1000"
                 data-aos-once="true"
               >
-                <img src="assets/images/home-one/man.png" alt="Man" />
+                <img src="{% static 'assets/images/home-one/man.png' %}" alt="Man" />
                 <div class="img1-circle">
                   <img
-                    src="assets/images/home-one/circle-man.png"
+                    src="assets/images/home-one/circle-man.png' %}"
                     class="circle-round"
                     alt="Circle"
                   />
@@ -580,7 +245,7 @@
                 data-aos-duration="1000"
                 data-aos-once="true"
               >
-                <img src="assets/images/home-one/girl.png" alt="Man" />
+                <img src="{% static 'assets/images/home-one/girl.png' %}" alt="Man" />
                 <div class="circle-option">
                   <div class="circle-option1"></div>
                   <div class="circle-option2"></div>
@@ -593,7 +258,7 @@
                 data-aos-duration="1000"
                 data-aos-once="true"
               >
-                <img src="assets/images/home-one/vector2.png" alt="vector" />
+                <img src="{% static 'assets/images/home-one/vector2.png' %}" alt="vector" />
               </div>
               <div
                 class="banner-img-vector2"
@@ -602,14 +267,14 @@
                 data-aos-duration="1000"
                 data-aos-once="true"
               >
-                <img src="assets/images/home-one/vector1.png" alt="vector" />
+                <img src="{% static 'assets/images/home-one/vector1.png' %}" alt="vector" />
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="banner-left-circle">
-        <img src="assets/images/home-one/circle-left.png" alt="Circle" />
+        <img src="{% static  'assets/images/home-one/circle-left.png' %}" alt="Circle" />
       </div>
     </div>
     <!-- Banner Area End -->
@@ -634,7 +299,7 @@
                   eiusmod tempor incididuntla bore et dolore dolor sit
                 </p>
                 <div class="shape-img">
-                  <img src="assets/images/shape/shape1.png" alt="Shape" />
+                  <img src="{% static 'assets/images/shape/shape1.png' %}" alt="Shape" />
                 </div>
               </div>
             </div>
@@ -654,7 +319,7 @@
                   eiusmod tempor incididuntla bore et dolore dolor sit
                 </p>
                 <div class="shape-img">
-                  <img src="assets/images/shape/shape1.png" alt="Shape" />
+                  <img src="{% static 'assets/images/shape/shape1.png' %}" alt="Shape" />
                 </div>
               </div>
             </div>
@@ -674,7 +339,7 @@
                   eiusmod tempor incididuntla bore et dolore dolor sit
                 </p>
                 <div class="shape-img">
-                  <img src="assets/images/shape/shape1.png" alt="Shape" />
+                  <img src="{% static 'assets/images/shape/shape1.png' %}" alt="Shape" />
                 </div>
               </div>
             </div>
@@ -697,7 +362,7 @@
                 data-aos-duration="900"
                 data-aos-once="true"
               >
-                <img src="assets/images/about-img/about-img1.jpg" alt="About" />
+                <img src="{% static 'assets/images/about-img/about-img1.jpg" alt="About" />
               </div>
               <div
                 class="img2"
@@ -706,7 +371,7 @@
                 data-aos-duration="900"
                 data-aos-once="true"
               >
-                <img src="assets/images/about-img/about-img2.jpg" alt="About" />
+                <img src="{% static 'assets/images/about-img/about-img2.jpg" alt="About" />
               </div>
             </div>
           </div>
@@ -886,7 +551,7 @@
           <div class="col-lg-4 col-6">
             <div class="team-item">
               <a href="team.html">
-                <img src="assets/images/team/team1.jpg" alt="Team" />
+                <img src="{% static 'assets/images/team/team1.jpg" alt="Team" />
               </a>
               <ul class="team-social">
                 <li>
@@ -915,7 +580,7 @@
                 <span>Bodybuilding Trainer</span>
               </div>
               <div class="team-vector">
-                <img src="assets/images/team/team-vector.png" alt="Vector" />
+                <img src="{% static 'assets/images/team/team-vector.png' %}" alt="Vector" />
               </div>
             </div>
           </div>
@@ -923,7 +588,7 @@
           <div class="col-lg-4 col-6">
             <div class="team-item">
               <a href="team.html">
-                <img src="assets/images/team/team2.jpg" alt="Team" />
+                <img src="{% static 'assets/images/team/team2.jpg" alt="Team" />
               </a>
               <ul class="team-social">
                 <li>
@@ -952,7 +617,7 @@
                 <span>Yoga Trainer</span>
               </div>
               <div class="team-vector">
-                <img src="assets/images/team/team-vector.png" alt="Vector" />
+                <img src="{% static 'assets/images/team/team-vector.png' %}" alt="Vector" />
               </div>
             </div>
           </div>
@@ -960,7 +625,7 @@
           <div class="col-lg-4 col-6">
             <div class="team-item">
               <a href="team.html">
-                <img src="assets/images/team/team3.jpg" alt="Team" />
+                <img src="{% static 'assets/images/team/team3.jpg" alt="Team" />
               </a>
               <ul class="team-social">
                 <li>
@@ -989,7 +654,7 @@
                 <span>Cardio Training</span>
               </div>
               <div class="team-vector">
-                <img src="assets/images/team/team-vector.png" alt="Vector" />
+                <img src="{% static 'assets/images/team/team-vector.png' %}" alt="Vector" />
               </div>
             </div>
           </div>
@@ -1485,100 +1150,7 @@
     <!-- Testimonials Area End -->
 
 
+{% endblock  %}
 
-    <!-- Footer Area -->
-    <div class="footer-area">
-      <div class="container ptb-100">
-        <div class="newsletter-area">
-          <div class="section-title text-center">
-            <span>JOIN THE COMMUNITY</span>
-            <h2 class="m-auto">Subscribe Our Newsletter</h2>
-          </div>
-          <form class="newsletter-form" data-toggle="validator" method="POST">
-            <input
-              type="email"
-              class="form-control"
-              placeholder="Enter Your Email Address"
-              name="EMAIL"
-              required
-              autocomplete="off"
-            />
-            <button class="subscribe-btn" type="submit">
-              Subscribe Now <i class="flaticon-paper-plane"></i>
-            </button>
-            <div id="validator-newsletter" class="form-result"></div>
-          </form>
-        </div>
-        <ul class="newsletter-social">
-          <li>
-            <a href="https://www.facebook.com/" target="_blank">
-              <i class="flaticon-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/" target="_blank">
-              <i class="flaticon-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/" target="_blank">
-              <i class="flaticon-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/" target="_blank">
-              <i class="flaticon-linkedin"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
 
-      <div class="copyright-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-5">
-              <ul class="copyright-list">
-                <li>
-                  <a href="about.html"> About </a>
-                </li>
-                <li>
-                  <a href="team.html"> Team </a>
-                </li>
-                <li>
-                  <a href="classes.html"> Classes </a>
-                </li>
-                <li>
-                  <a href="blog-1.html"> Blog </a>
-                </li>
-                <li>
-                  <a href="contact.html"> Contact </a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-6 col-md-7">
-              <div class="copy-right-text">
-                <p>
-                  © Golan is Proudly Owned by
-                  <a href="https://1.envato.market/ZdJ7QQ" target="_blank"
-                    >HiboTheme</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Footer Area End -->
-
-    <!-- Jquery Min JS -->
-    <script data-cfasync="false" src="assets/js/email-decode.min.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <!-- Plugins JS -->
-    <script src="assets/js/plugins.js"></script>
-    <!-- Custom  JS -->
-    <script src="assets/js/custom.js"></script>
-  </body>
-
-  <!-- Mirrored from templates.hibotheme.com/golan/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Nov 2022 07:31:13 GMT -->
-</html>
+ 
