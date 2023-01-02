@@ -5,7 +5,7 @@ from django.db import models
 class GymProducts(models.Model):
     
     name=models.CharField(max_length=30)
-    price=models.CharField(max_length=30)
+    price=models.CharField(max_length=30)  
     oldprice=models.CharField(max_length=30)
     description=models.CharField(max_length=100)
     image=models.ImageField(upload_to="productimage")

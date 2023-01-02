@@ -32,11 +32,11 @@ def POSTADDPRODUCT(request):
         productimage= request.FILES['productimage']
 
       products = GymProducts(
-           product_name = productname,
-           product_price = productprice,
-           product_oldprice = productoldprice,
-           product_description = productdescription,
-           product_image = productimage
+           name = productname,
+           price = productprice,
+           oldprice = productoldprice,
+           description = productdescription,
+           image = productimage
            
         )
       
