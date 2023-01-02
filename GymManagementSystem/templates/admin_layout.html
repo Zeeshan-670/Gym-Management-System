@@ -6,11 +6,13 @@
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<title>Sales</title>
+<title>Admin Dashboard</title>
+<link rel="icon" type="image/png" href="{% static 'assets/images/logos/headerlogo.png' %}" />
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{% static 'admin_assets/css/bootstrap1.min.css' %}" />
-     
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+ <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" /> 
 <link rel="stylesheet" href="{% static 'admin_assets/vendors/themefy_icon/themify-icons.css' %}" />
 
 <link rel="stylesheet" href="{% static 'admin_assets/vendors/niceselect/css/nice-select.css' %}" />
@@ -41,6 +43,9 @@
 
 <link rel="stylesheet" href="{% static 'admin_assets/css/style1.css' %}" />
 <link rel="stylesheet" href="{% static 'admin_assets/css/colors/default.css" id="colorSkinCSS' %}">
+<script src="{% static 'admin_assets/js/jquery1-3.4.1.min.js' %}"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
 </head>
 
 <body class="crm_body_bg">
@@ -48,24 +53,18 @@
 
     <nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
     <div class="logo d-flex justify-content-between">
-    <a href="index-2.html"><img src="img/logo.png" alt=""></a>
+    <a href="index-2.html"><img src="{% static 'admin_assets/img/logo/mainlogo.png' %}" alt=""></a>
     <div class="sidebar_close_icon d-lg-none">
     <i class="ti-close"></i>
     </div>
     </div>
     <ul id="sidebar_menu">
     <li class="mm-active">
-    <a class="has-arrow" href="#" aria-expanded="false">
+    <a  href="{% url 'users' %}" aria-expanded="false">
     <div class="icon_menu">
-    <img src="img/menu-icon/dashboard.svg" alt="">
     </div>
     <span>My Account</span>
     </a>
-    <ul>
-    <li><a class="active" href="index-2.html">Sales</a></li>
-    <li><a href="index_2.html">Default</a></li>
-    <li><a href="index_3.html">Dark Menu</a></li>
-    </ul>
     </li>
     <li class="mm-active">
         <a class="has-arrow" href="#" aria-expanded="false">
@@ -75,8 +74,8 @@
         <span>Trainers</span>
         </a>
         <ul>
-        <li><a class="active" href="">Trainer Details</a></li>
-        <li><a href="{% url 'newtrainer' %}">Add Trainer</a></li>
+        <li><a class="active" href="{% url 'trainerrecords' %}">Trainer Details</a></li>
+        <li><a href="{% url 'addtrainer' %}">Add Trainer</a></li>
         </ul>
         </li>
         <li class="mm-active">
@@ -87,7 +86,7 @@
             <span>Packages</span>
             </a>
             <ul>
-            <li><a class="active" href="">Package Details</a></li>
+            <li><a class="active" href="{% url 'packagerecords' %}">Package Details</a></li>
             <li><a href="{% url 'AddPackages' %}">Add Package</a></li>
             </ul>
             </li>
@@ -96,12 +95,33 @@
                 <div class="icon_menu">
                 <img src="img/menu-icon/dashboard.svg" alt="">
                 </div>
-                <span>Bookings</span>
+                <span>Orders</span>
                 </a>
                 <ul>
-                <li><a class="active" href="">Trainer Details</a></li>
-                <li><a href="{% url 'newtrainer' %}">Add Trainer</a></li>
+                    
+                <li><a class="active" href="{% url 'orders' %}">Order Details</a></li>
                 </ul>
+                </li>
+                <li class="mm-active">
+                    <a class="has-arrow" href="#" aria-expanded="false">
+                    <div class="icon_menu">
+                    <img src="img/menu-icon/dashboard.svg" alt="">
+                    </div>
+                    <span>Products</span>
+                    </a>
+                    <ul>
+                        
+                    <li><a class="active" href="{% url 'productrecords' %}">Products Details</a></li>
+                    <li><a href="{% url 'addproducts' %}">Add Products</a></li>
+                    </ul>
+                    </li>
+            <li class="mm-active">
+                <a href="#" aria-expanded="false">
+                <div class="icon_menu">
+                <img src="img/menu-icon/dashboard.svg" alt="">
+                </div>
+                <span>Bookings</span>
+                </a>
                 </li>
     </div>
 
@@ -129,7 +149,6 @@
         <div class="header_right d-flex justify-content-between align-items-center">
         <div class="header_notification_warp d-flex align-items-center">
         <li>
-        <a class="bell_notification_clicker nav-link-notify" href="#"> <img src="img/icon/bell.svg" alt="">
         </a>
         
         <div class="Menu_NOtification_Wrap">
@@ -190,7 +209,6 @@
         
         <div class="single_notify d-flex align-items-center">
         <div class="notify_thumb">
-        <a href="#"><img src="img/staf/3.png" alt=""></a>
         </div>
         <div class="notify_content">
         <a href="#"><h5>what a packages</h5></a>
@@ -205,22 +223,15 @@
         </div>
         </div>
         
-        </li>
-        <li>
-        <a class="CHATBOX_open nav-link-notify" href="#"> <img src="img/icon/msg.svg" alt=""> </a>
-        </li>
         </div>
         <div class="profile_info">
-        <img src="img/client_img.png" alt="#">
+            <h3>{{user.username}}</h3>
         <div class="profile_info_iner">
         <div class="profile_author_name">
-        <p>Neurologist </p>
-        <h5>Dr. Robar Smith</h5>
+        <h5>{{user.username}}</h5>
         </div>
         <div class="profile_info_details">
-        <a href="#">My Profile </a>
-        <a href="#">Settings</a>
-        <a href="#">Log Out </a>
+        <a href="logout/">Log Out </a>
         </div>
         </div>
         </div>
@@ -239,7 +250,6 @@
 
 
 
-<script src="{% static 'admin_assets/js/jquery1-3.4.1.min.js' %}"></script>
 
 <script src="{% static 'admin_assets/js/popper1.min.js' %}"></script>
 
@@ -297,6 +307,9 @@
 
 <script src="{% static 'admin_assets/js/dashboard_init.js' %}"></script>
 <script src="{% static 'admin_assets/js/custom.js' %}"></script>
+ 
+
+
 </body>
 
 </html>

@@ -169,12 +169,12 @@
     <div class="inner-banner inner-bg2">
       <div class="container">
         <div class="inner-title">
-          <h3>Portfolio</h3>
+          <h3>Trainers</h3>
           <ul>
             <li>
               <a href="index.html">Home</a>
             </li>
-            <li>Portfolio</li>
+            <li>Trainers</li>
           </ul>
         </div>
       </div>
@@ -185,109 +185,32 @@
     <div class="portfolio-area pt-100 pb-70">
       <div class="container">
         <div class="section-title text-center mb-45">
-          <span>OUR PORTFOLIO</span>
+          <span>Our Trainers</span>
           <h2 class="m-auto">
-            We Offer Exclusive Services To Build Health With Professionals
+            We have Great Trainers to Make You the Best
           </h2>
         </div>
 
         <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-item">
-              <a href="portfolio-details.html" class="portfolio-img"
-                ><img
-                  src="assets/images/portfolio/portfolio-1.jpg"
-                  alt="Portfolio"
-              /></a>
-              <div class="portfolio-content">
-                <h3>
-                  <a href="portfolio-details.html">Boxing For Men & Women</a>
-                </h3>
-                <span>Boxing Training</span>
-              </div>
-            </div>
-          </div>
+          {% for item in trainer %}
 
           <div class="col-lg-4 col-md-6">
             <div class="portfolio-item">
               <a href="portfolio-details.html" class="portfolio-img"
                 ><img
-                  src="assets/images/portfolio/portfolio-2.jpg"
+                  src="/Media/{{item.trainer_image}}" width="300px" height="300px"
                   alt="Portfolio"
               /></a>
               <div class="portfolio-content">
                 <h3>
-                  <a href="portfolio-details.html">Strength Training For Men</a>
+                  <a href="portfolio-details.html">Trainer Name: {{item.trainer_name}}</a>
                 </h3>
-                <span>Strength Training</span>
+                <span>Trainer Detail: {{item.trainer_description}}</span>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-item">
-              <a href="portfolio-details.html" class="portfolio-img"
-                ><img
-                  src="assets/images/portfolio/portfolio-3.jpg"
-                  alt="Portfolio"
-              /></a>
-              <div class="portfolio-content">
-                <h3>
-                  <a href="portfolio-details.html">Cardio Training For Women</a>
-                </h3>
-                <span>Cardio Training</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-item">
-              <a href="portfolio-details.html" class="portfolio-img"
-                ><img
-                  src="assets/images/portfolio/portfolio-4.jpg"
-                  alt="Portfolio"
-              /></a>
-              <div class="portfolio-content">
-                <h3>
-                  <a href="portfolio-details.html">Boxing High Intensity</a>
-                </h3>
-                <span>Boxing Training</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-item">
-              <a href="portfolio-details.html" class="portfolio-img"
-                ><img
-                  src="assets/images/portfolio/portfolio-5.jpg"
-                  alt="Portfolio"
-              /></a>
-              <div class="portfolio-content">
-                <h3>
-                  <a href="portfolio-details.html">Bodybuilding Sessions</a>
-                </h3>
-                <span>Bodybuilding </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-item">
-              <a href="portfolio-details.html" class="portfolio-img"
-                ><img
-                  src="assets/images/portfolio/portfolio-6.jpg"
-                  alt="Portfolio"
-              /></a>
-              <div class="portfolio-content">
-                <h3>
-                  <a href="portfolio-details.html">Strategic Self Defense</a>
-                </h3>
-                <span>Self Defense</span>
-              </div>
-            </div>
-          </div>
-
+          {% endfor %}
           <div class="col-lg-12 col-md-12 text-center">
             <div class="pagination-area">
               <a href="portfolio.html" class="prev page-numbers">

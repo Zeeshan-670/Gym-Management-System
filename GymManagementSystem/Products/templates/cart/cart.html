@@ -1,0 +1,318 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load cart_tag %}
+{% block 'main_content' %}
+
+
+    <!-- Modal Start -->
+    <div
+      class="modal fade fade-scale searchmodal"
+      id="searchmodal"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-bs-dismiss="modal">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="modal-search-form">
+              <input
+                type="search"
+                class="search-field"
+                placeholder="Search..."
+              />
+              <button type="submit"><i class="ri-search-line"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Sidebar Modal -->
+    <div
+      class="sidebarmodal modal right fade"
+      id="sidebarmodal"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="sidebar-logo">
+              <img src="assets/images/logos/logo-2.png" alt="Image" />
+            </div>
+
+            <button type="button" class="close" data-bs-dismiss="modal">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="sidebar-about">
+              <h3>About Us</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut tur incidunt ut labore et
+              </p>
+            </div>
+            <div class="contact-us">
+              <h3>Contact Information</h3>
+              <ul class="contact-item">
+                <li>
+                  <i class="ri-phone-line"></i>
+                  <div class="content">
+                    <h4>Office Address</h4>
+                    <p>4252 Stanton Hollow Road,New York USA</p>
+                  </div>
+                </li>
+
+                <li>
+                  <i class="ri-message-2-line"></i>
+                  <div class="content">
+                    <h4>Call Us</h4>
+                    <p>
+                      <a href="tel:+1(044)123456789">+1 (044) 123 456 789</a>
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i class="ri-map-pin-line"></i>
+                  <div class="content">
+                    <h4>Email Us</h4>
+                    <p>
+                      <a
+                        href="https://templates.hibotheme.com/cdn-cgi/l/email-protection#8ee7e0e8e1cee9e1e2efe0a0ede1e3"
+                        ><span
+                          class="__cf_email__"
+                          data-cfemail="137a7d757c53747c7f727d3d707c7e"
+                          >[email&#160;protected]</span
+                        ></a
+                      >
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i class="ri-time-line"></i>
+                  <div class="content">
+                    <h4>Office Open</h4>
+                    <p>Sun - Fri (08AM - 10PM)</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-follow-us">
+              <h3>Follow Us</h3>
+              <ul class="social-wrap">
+                <li>
+                  <a href="https://twitter.com/?lang=en" target="_blank">
+                    <i class="flaticon-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/" target="_blank">
+                    <i class="flaticon-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/" target="_blank">
+                    <i class="flaticon-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/" target="_blank">
+                    <i class="flaticon-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-newsletter">
+              <h3>Newsletter</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices
+              </p>
+              <div class="sidebar-newsletter-area">
+                <form
+                  class="sidebar-newsletter-form"
+                  data-toggle="validator"
+                  method="POST"
+                >
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter Your Email"
+                    name="EMAIL"
+                    required
+                    autocomplete="off"
+                  />
+                  <button class="subscribe-btn" type="submit">
+                    <i class="flaticon-paper-plane"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Sidebar Modal -->
+
+    <!-- Inner Banner -->
+    <div class="inner-banner inner-bg1">
+      <div class="container">
+        <div class="inner-title">
+          <h3>Shopping Cart</h3>
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>Shopping Cart</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Inner Banner End -->
+{% if request.session.cart|length < 1 %}
+<div class="m-4">
+  <h1>Nothing In Your Cart</h1>
+  <h2>Go to Shopping</h2>
+  <a href="{% url 'products' %}" class="default-btn border-radius-5">
+    Start Shopping
+  </a>
+</div>
+
+
+{% else %}
+
+    <!-- Start Cart Area -->
+    <section class="cart-wraps-area ptb-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <form>
+              <div class="cart-wraps">
+                <div class="cart-table table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                    
+                      {% for key,value in request.session.cart.items %}
+                      <tr>
+                        <td class="product-thumbnail">
+                          <a href="cart.html">
+                            <img
+                              src="{{value.image}}"
+                              alt="Image"
+                            />
+                          </a>
+                        </td>
+
+                        <td class="product-name">
+                          <a href="cart.html">{{value.name}}</a>
+                        </td>
+
+                        <td class="product-price">
+                          <span class="unit-amount">${{value.price}}</span>
+                        </td>
+
+                        <td class="product-quantity">
+                          <div class="input-counter">
+                            <span class="minus-btn">
+                              <a href="{% url 'item_decrement' value.product_id %}">
+                              <i class="ri-subtract-line"></i>
+                              </a>
+                            </span>
+                            <input type="number" value="{{value.quantity}}" />
+                            <span class="plus-btn">
+                              <a href="{% url 'item_increment' value.product_id %}">
+                              <i class="ri-add-line"></i>
+                            </a>
+                            </span>
+                          </div>
+                        </td>
+
+                        <td class="product-subtotal">
+                          <span class="subtotal-amount">${{ value.price|multiply:value.quantity }}</span>
+
+                          <a href="{% url 'item_clear' key %}" class="remove">
+                            <i class="ri-delete-bin-line"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </form>
+
+            <div class="cart-buttons">
+              <div class="row align-items-center">
+                <div class="col-lg-7">
+                  <div class="cart-widget-form-area">
+                    <form class="cart-widget-form">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Coupon Code"
+                      />
+                      <button class="subscribe-btn" type="submit">
+                        Apply Coupon
+                      </button>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="col-lg-5 text-end">
+                  <a href="{% url 'cart_clear' %}" class="default-btn border-radius-5">
+                    Clear Cart
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Cart Area -->
+
+
+    <!-- Cart Totals Area -->
+    <div class="cart-totals-area pb-100">
+      <div class="container">
+        <div class="cart-totals">
+          <h3>Cart Totals</h3>
+          <ul>
+            <li>Subtotal <span>${{cart_total_amount}}</span></li>
+            <li>Shipping <span>$30.00</span></li>
+            <li>Tax <span>$20.00</span></li>
+            <li>
+              Total <span><b>${{cart_total_amount|add:30|add:20}}</b></span>
+            </li>
+          </ul>
+          <a href="{% url 'checkout' %}" class="default-btn border-radius-5">
+            Proceed to checkout
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <!-- Cart Totals Area End -->
+
+{% endblock  %}

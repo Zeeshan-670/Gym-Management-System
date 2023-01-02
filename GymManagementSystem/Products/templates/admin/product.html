@@ -1,0 +1,46 @@
+{% extends 'admin_layout.html' %}
+
+
+{% block 'main_content' %}
+<div class="white_card card_height_100 mb_30">
+    <div class="white_card_header">
+    <div class="box_header m-0">
+    <div class="main-title">
+    <h3 class="m-0">Packages</h3>
+    </div>
+    </div>
+    </div>
+    <div class="white_card_body">
+    <div class="table-responsive">
+    <table class="table">
+    <thead>
+    <tr>
+    <th scope="col">Product Name</th>
+    <th scope="col">Product Price</th>
+    <th scope="col">Prodcut Old Price</th>
+    <th scope="col">Product Description</th>
+    <th scope="col">Product Image</th>
+    <th scope="col">Controls</th>
+    
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in products %}    
+    <tr>
+    <td>{{item.product_name}}</td>
+    <td>{{item.product_price}}</td>
+    <td>{{item.product_oldprice}}</td>
+    <td>{{item.product_description}}</td>
+    <td><img src="/Media/{{item.product_image}}" width="100px" height="100px"/></td>
+    <td><a href="{{item.id}}"><i class="fa fa-edit"></i></a>
+        <a href="{{item.id}}"><i class="fa fa-trash"></i></a> </td>
+    
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+
+{% endblock  %}

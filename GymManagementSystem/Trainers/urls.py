@@ -8,5 +8,9 @@ urlpatterns = [
 
      #Trainer Url For Admins
      path('addtrainer/',view=views.addTrainers,name="addtrainer"),
-     path('traineradd/',view=views.PostaddTrainer,name="postAddTrainer")
+     path('traineradd/',view=views.PostaddTrainer,name="postAddTrainer"),
+     path('trainerrecords/',view=views.TRAINERRECORDS,name="trainerrecords"),
+     path('trainerrecords/<str:id>',view=views.TRAINEREDIT,name="EditTrainer"),
+     path('update/<str:id>',view=views.UPDATETRAINER,name="update"),
+     path('delete/<str:id>',view=views.DELETETRAINER,name="delete")
 ]

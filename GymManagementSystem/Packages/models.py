@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-class Packages(models.Model):
+class GymPackages(models.Model):
     
     package_price=models.CharField(max_length=30)
     package_duration=models.CharField(max_length=50)

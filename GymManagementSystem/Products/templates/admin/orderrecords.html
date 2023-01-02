@@ -1,0 +1,69 @@
+{% extends 'admin_layout.html' %}
+{% block 'main_content' %}
+<div class="white_card card_height_100 mb_30">
+    <div class="white_card_header">
+    <div class="box_header m-0">
+    <div class="main-title">
+    <h3 class="m-0">Orders</h3>
+    </div>
+    </div>
+    </div>
+    <div class="white_card_body">
+    <div class="table-responsive">
+    <table class="table" id="myTable">
+    <thead>
+    <tr>
+    <th scope="col">FirstName</th>
+    <th scope="col">LastName</th>
+    <th scope="col">Country</th>
+    <th scope="col">Address</th>
+    <th scope="col">City</th>
+    <th scope="col">State</th>
+    <th scope="col">PostCode</th>
+    <th scope="col">Email</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Additional Info</th>
+    <th scope="col">Amount</th>
+
+    
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in order %}    
+    <tr>
+    <td>{{item.firstname}}</td>
+    <td>{{item.lastname}}</td>
+    <td>{{item.country}}</td>
+    <td>{{item.address}}</td>
+    <td>{{item.city}}</td>
+    <td>{{item.state}}</td>
+    <td>{{item.postcode}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.phone}}</td>
+    <td>{{item.additional_info}}</td>
+    <td>{{item.amount}}</td>
+   
+    
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+
+
+<script>
+    $(document).ready( function () {
+        $('#myTable').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+              {
+                extend: 'excelHtml5',
+                title: 'Order Detail',
+              },
+            ],
+        });
+    } );
+</script>
+{% endblock  %}

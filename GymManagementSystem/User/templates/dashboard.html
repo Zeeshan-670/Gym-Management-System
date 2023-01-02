@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block 'main_content' %}
+<div class="container m-5" style="padding:2%;">
+    <ul>
+        <li><a href="{% url 'profile' %}"><h3>Profile</h3></a></li>
+        <li><a href="{% url 'profile' %}"><h3>Packages</h3></a></li>
+        <li><a href="{% url 'profile' %}"><h3>Products</h3></a></li>
+    </ul>
+</div>
+
+{% endblock  %}

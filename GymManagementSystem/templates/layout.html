@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load cart_tag %}
 <html lang="en">
   <!-- Mirrored from templates.hibotheme.com/golan/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Nov 2022 07:30:51 GMT -->
   <head>
@@ -72,7 +73,7 @@
 
 
                 <li class="nav-item">
-                  <a href="" class="nav-link"> Home </a>
+                  <a href="{% url 'home' %}" class="nav-link"> Home </a>
                 </li>
                 
                 <li class="nav-item">
@@ -98,14 +99,30 @@
                 <li class="nav-item">
                   <a href="{% url 'aboutus' %}" class="nav-link"> About Us </a>
                 </li>
+                {% if user.is_authenticated  %}
+                <div class="optional-item mt-4 m-2">
+                  <a class="optional-item-cart color-ffffff" href="{% url 'cart_detail' %}">
+                    <i class="flaticon-shopping-cart"></i>
+                    <span>{{request.session.cart|length}}</span>
+                  </a>
+                </div>
                 
+                <li class="nav-item nav-link active">
+                  <a href="{% url 'dashboard' %}" class="nav-link"> Dashboard </a>
+                </li>
+                <li class="nav-item nav-link active">
+                  <a href="{% url 'logout' %}" class="nav-link"> logout  </a>
+                </li>
+                
+                
+                {% else %}
                 <li class="nav-item nav-link active">
                   <a href="{% url 'login' %}" class="nav-link"> Sign In  </a>
                 </li>
                 <li class="nav-item nav-link active">
                   <a href="{% url 'signup' %}" class="nav-link"> Sign Up  </a>
                 </li>
-                
+                {% endif %}
 
               </ul>
 
@@ -113,6 +130,7 @@
 
               <div class="mobile-nav">
                 <div class="mobile-other d-flex align-items-center">
+                  
                   <div class="optional-item">
                     <div class="search-btn">
                       <a
@@ -132,8 +150,13 @@
                       <span>2</span>
                     </a>
                   </div>
-
+                  <div class="side-menu">
+                    <a class="#" href="#sidebarmodal" data-bs-toggle="modal" data-bs-target="#sidebarmodal">
+                      <i class="ri-menu-line"></i>
+                    </a>
+                  </div>
                   <div class="optional-item">
+                    
                     <div class="side-menu">
                       <a
                         class="#"

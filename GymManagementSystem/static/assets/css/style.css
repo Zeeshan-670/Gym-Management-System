@@ -1259,7 +1259,7 @@ Main Banner Area
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(3, 2, 7, 0.9);
+  /* background-color: rgba(3, 2, 7, 0.9);   */
 }
 
 .banner-content {

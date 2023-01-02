@@ -225,12 +225,13 @@
         </div>
 
         <div class="row justify-content-center">
+          {% for item in products %}
           <div class="col-lg-3 col-6">
             <div class="product-card mb-30">
               <div class="product-img">
                 <a href="shop-details.html">
                   <img
-                    src="assets/images/products/products-1.jpg"
+                    src="/Media/{{item.image}}"
                     alt="Top Branded"
                   />
                 </a>
@@ -239,223 +240,24 @@
                     <a href="wishlist.html"><i class="ri-heart-line"></i></a>
                   </li>
                   <li>
-                    <a href="cart.html"
-                      ><i class="ri-shopping-cart-2-line"></i
+                    <a href="{% url 'cart_add' item.id %}"
+                    ><i class="ri-shopping-cart-2-line"></i
                     ></a>
                   </li>
                 </ul>
               </div>
               <div class="content">
                 <h3 class="title-text">
-                  <a href="shop-details.html">Protein Natural</a>
+                  <a href="shop-details.html">{{item.name}}</a>
                 </h3>
-                <span><del>$180.00</del> - $140.00</span>
+                <span><del>${{item.oldprice}}</del> - ${{item.price}}</span>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-6">
-            <div class="product-card mb-30">
-              <div class="product-img">
-                <a href="shop-details.html">
-                  <img
-                    src="assets/images/products/products-2.jpg"
-                    alt="Top Branded"
-                  />
-                </a>
-                <ul class="product-action">
-                  <li>
-                    <a href="wishlist.html"><i class="ri-heart-line"></i></a>
-                  </li>
-                  <li>
-                    <a href="cart.html"
-                      ><i class="ri-shopping-cart-2-line"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <h3 class="title-text">
-                  <a href="shop-details.html">Protein's Athletic </a>
-                </h3>
-                <span><del>$130.00</del> - $120.00</span>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
+          
 
-          <div class="col-lg-3 col-6">
-            <div class="product-card mb-30">
-              <div class="product-img">
-                <a href="shop-details.html">
-                  <img
-                    src="assets/images/products/products-3.jpg"
-                    alt="Top Branded"
-                  />
-                </a>
-                <ul class="product-action">
-                  <li>
-                    <a href="wishlist.html"><i class="ri-heart-line"></i></a>
-                  </li>
-                  <li>
-                    <a href="cart.html"
-                      ><i class="ri-shopping-cart-2-line"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <h3 class="title-text">
-                  <a href="shop-details.html">Dumbbells Black </a>
-                </h3>
-                <span><del>$100.00</del> - $90.00</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <div class="product-card mb-30">
-              <div class="product-img">
-                <a href="shop-details.html">
-                  <img
-                    src="assets/images/products/products-4.jpg"
-                    alt="Top Branded"
-                  />
-                </a>
-                <ul class="product-action">
-                  <li>
-                    <a href="wishlist.html"><i class="ri-heart-line"></i></a>
-                  </li>
-                  <li>
-                    <a href="cart.html"
-                      ><i class="ri-shopping-cart-2-line"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <h3 class="title-text">
-                  <a href="shop-details.html">Shaker Bottle </a>
-                </h3>
-                <span><del>$30.00</del> - $20.00</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <div class="product-card mb-30">
-              <div class="product-img">
-                <a href="shop-details.html">
-                  <img
-                    src="assets/images/products/products-5.jpg"
-                    alt="Top Branded"
-                  />
-                </a>
-                <ul class="product-action">
-                  <li>
-                    <a href="wishlist.html"><i class="ri-heart-line"></i></a>
-                  </li>
-                  <li>
-                    <a href="cart.html"
-                      ><i class="ri-shopping-cart-2-line"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <h3 class="title-text">
-                  <a href="shop-details.html">Metal Barbell </a>
-                </h3>
-                <span><del>$70.00</del> - $50.00</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <div class="product-card mb-30">
-              <div class="product-img">
-                <a href="shop-details.html">
-                  <img
-                    src="assets/images/products/products-6.jpg"
-                    alt="Top Branded"
-                  />
-                </a>
-                <ul class="product-action">
-                  <li>
-                    <a href="wishlist.html"><i class="ri-heart-line"></i></a>
-                  </li>
-                  <li>
-                    <a href="cart.html"
-                      ><i class="ri-shopping-cart-2-line"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <h3 class="title-text">
-                  <a href="shop-details.html">Protein's Powder </a>
-                </h3>
-                <span><del>$80.00</del> - $60.00</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <div class="product-card mb-30">
-              <div class="product-img">
-                <a href="shop-details.html">
-                  <img
-                    src="assets/images/products/products-7.jpg"
-                    alt="Top Branded"
-                  />
-                </a>
-                <ul class="product-action">
-                  <li>
-                    <a href="wishlist.html"><i class="ri-heart-line"></i></a>
-                  </li>
-                  <li>
-                    <a href="cart.html"
-                      ><i class="ri-shopping-cart-2-line"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <h3 class="title-text">
-                  <a href="shop-details.html">Metal Dumbbells</a>
-                </h3>
-                <span><del>$70.00</del> - $55.00</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <div class="product-card mb-30">
-              <div class="product-img">
-                <a href="shop-details.html">
-                  <img
-                    src="assets/images/products/products-8.jpg"
-                    alt="Top Branded"
-                  />
-                </a>
-                <ul class="product-action">
-                  <li>
-                    <a href="wishlist.html"><i class="ri-heart-line"></i></a>
-                  </li>
-                  <li>
-                    <a href="cart.html"
-                      ><i class="ri-shopping-cart-2-line"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="content">
-                <h3 class="title-text">
-                  <a href="shop-details.html">Yoga Mat</a>
-                </h3>
-                <span><del>$90.00</del> - $75.00</span>
-              </div>
-            </div>
-          </div>
 
           <div class="col-lg-12 col-md-12 text-center">
             <div class="pagination-area">

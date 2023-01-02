@@ -15,10 +15,10 @@ def signup(request):
 
 def register(request):
     if request.method == 'POST':
-        firstname = request.POST.get('firstname'),
-        lastname = request.POST.get('lastname'),
-        email = request.POST.get('email'),       
-        username=request.POST.get('username'),
+        firstname = request.POST.get('firstname')
+        lastname = request.POST.get('lastname')
+        email = request.POST.get('email')       
+        username=request.POST.get('username')
         password = request.POST.get('password')   
 
         
@@ -72,7 +72,7 @@ def dologin (request):
       if request.method == "POST":
         user= authenticate(request,
         username=request.POST.get('username'),
-        password=request.POST.get('password'),)
+        password=request.POST.get('password'))
 
         if user!=None:
             login(request,user)
@@ -87,3 +87,43 @@ def dologin (request):
       else:
          messages.error(request,'Fields Not Matched!')
          return redirect('handlelogin')             
+
+
+#Portfolio Work
+
+def PROFILE(request):
+    #return HttpResponse("<h1>Portfolio</h1>")
+    return render(request,'profile.html')
+
+def PROFILE_UPDATE(request):
+    if request.method == "POST":
+        
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        
+        user_id = request.user.id
+        
+
+        user = CustomUser.objects.get(id = user_id)
+        user.first_name = first_name    
+        user.last_name = last_name
+        user.username = username
+        user.email = email
+    
+
+        if password != None and password != "":
+            user.set_password(password)
+
+        user.save()
+        
+        messages.success(request,'Profile updated Successfully')
+        return redirect('profile')
+
+
+#Dashboard
+
+def DASHBOARD(request):
+    return render(request,"dashboard.html")

@@ -185,109 +185,33 @@
     <div class="portfolio-area pt-100 pb-70">
       <div class="container">
         <div class="section-title text-center mb-45">
-          <span>OUR PORTFOLIO</span>
+          <span>OUR PACKAGES</span>
           <h2 class="m-auto">
-            We Offer Exclusive Services To Build Health With Professionals
+            We Offer Exclusive Packages To Build Health With Professionals
           </h2>
         </div>
 
         <div class="row justify-content-center">
+          {% for item in package %}
           <div class="col-lg-4 col-md-6">
             <div class="portfolio-item">
               <a href="portfolio-details.html" class="portfolio-img"
                 ><img
-                  src="{% static 'assets/images/portfolio/portfolio-1.jpg' %}"
+                  src="/Media/{{item.package_image}}"
                   alt="Portfolio"
               /></a>
               <div class="portfolio-content">
                 <h3>
-                  <a href="portfolio-details.html">Boxing For Men & Women</a>
+                  <a href="portfolio-details.html">Price: {{item.package_price}}</a>
                 </h3>
-                <span>Boxing Training</span>
+                <span>Days: {{item.package_days}}</span>
+                <span>Duration :{{item.package_duration}}</span>
+                <span>Timing: {{item.package_timing}}</span>
+                <span>Book Package</span>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-item">
-              <a href="portfolio-details.html" class="portfolio-img"
-                ><img
-                  src="{% static 'assets/images/portfolio/portfolio-2.jpg' %}"
-                  alt="Portfolio"
-              /></a>
-              <div class="portfolio-content">
-                <h3>
-                  <a href="portfolio-details.html">Strength Training For Men</a>
-                </h3>
-                <span>Strength Training</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-item">
-              <a href="portfolio-details.html" class="portfolio-img"
-                ><img
-                  src="{% static 'assets/images/portfolio/portfolio-3.jpg' %}"
-                  alt="Portfolio"
-              /></a>
-              <div class="portfolio-content">
-                <h3>
-                  <a href="portfolio-details.html">Cardio Training For Women</a>
-                </h3>
-                <span>Cardio Training</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-item">
-              <a href="portfolio-details.html" class="portfolio-img"
-                ><img
-                  src="{% static 'assets/images/portfolio/portfolio-4.jpg' %}"
-                  alt="Portfolio"
-              /></a>
-              <div class="portfolio-content">
-                <h3>
-                  <a href="portfolio-details.html">Boxing High Intensity</a>
-                </h3>
-                <span>Boxing Training</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-item">
-              <a href="portfolio-details.html" class="portfolio-img"
-                ><img
-                  src="{% static 'assets/images/portfolio/portfolio-5.jpg' %}"
-                  alt="Portfolio"
-              /></a>
-              <div class="portfolio-content">
-                <h3>
-                  <a href="portfolio-details.html">Bodybuilding Sessions</a>
-                </h3>
-                <span>Bodybuilding </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-item">
-              <a href="portfolio-details.html" class="portfolio-img"
-                ><img
-                  src="{% static 'assets/images/portfolio/portfolio-6.jpg' %}"
-                  alt="Portfolio"
-              /></a>
-              <div class="portfolio-content">
-                <h3>
-                  <a href="portfolio-details.html">Strategic Self Defense</a>
-                </h3>
-                <span>Self Defense</span>
-              </div>
-            </div>
-          </div>
-
+          {% endfor %}
           <div class="col-lg-12 col-md-12 text-center">
             <div class="pagination-area">
               <a href="portfolio.html" class="prev page-numbers">
